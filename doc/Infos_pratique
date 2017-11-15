@@ -1,0 +1,27 @@
+/////////////////////////////////////////////////////
+		TP sécu lab2
+/////////////////////////////////////////////////////
+
+-------
+Groupe:
+-------
+
+	Maxime COHEN - Développeur
+	Cyril ARMENGOL - Réseaux
+
+
+-----------------
+Complement sujet:
+-----------------
+
+HIDS: Host Based Intrusion Detect System
+      -> initialisé selon de l'HIDS
+      	 -> calcul des empreintes
+	 -> stocker dans une bdd/fichier
+	    -> base de référence
+	       -> en lieu sûre
+	       -> en "read only"
+      -> à intervalle régulier, l'HIDS reclacul
+	les empreintes et les compares à la bdd
+
+
