@@ -36,12 +36,12 @@ CREATE TABLE Hash (
   hash_id INTEGER NOT NULL,
   hash_date DATE NOT NULL,
   hash_site_id INTEGER NOT NULL,
-  hash_status_id INTEGER NOT NULL,
+  hash_stat_id INTEGER NOT NULL,
   hash_file_name VARCHAR(70) NOT NULL,
   hash_file_path VARCHAR(255) NOT NULL,
 	CONSTRAINT PK_hash PRIMARY KEY (hash_id),
 	CONSTRAINT FK_hash_site FOREIGN KEY (hash_site_id) REFERENCES Site(site_id),
-	CONSTRAINT FK_hash_status FOREIGN KEY (hash_status_id) REFERENCES Status(status_id)
+	CONSTRAINT FK_hash_stat FOREIGN KEY (hash_stat_id) REFERENCES Status(stat_id)
 );
 
 CREATE TABLE PersonSite (
