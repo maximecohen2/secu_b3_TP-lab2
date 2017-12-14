@@ -1,17 +1,17 @@
 CREATE TABLE Role (
-  role_id INTEGER NOT NULL,
+  role_id INTEGER AUTO_INCREMENT,
   role_label VARCHAR(80) NOT NULL,
 	CONSTRAINT PK_role PRIMARY KEY (role_id)
 );
 
 CREATE TABLE Status (
-  stat_id INTEGER NOT NULL,
+  stat_id INTEGER AUTO_INCREMENT,
   stat_label VARCHAR(80) NOT NULL,
 	CONSTRAINT PK_stat PRIMARY KEY (stat_id)
 );
 
 CREATE TABLE Site (
-  site_id INTEGER NOT NULL,
+  site_id INTEGER AUTO_INCREMENT,
   site_name VARCHAR(70) NOT NULL,
   site_address VARCHAR(80) NOT NULL,
   site_date DATE NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE Site (
 );
 
 CREATE TABLE Person (
-  pers_id INTEGER NOT NULL,
+  pers_id INTEGER AUTO_INCREMENT,
   pers_role_id INTEGER NOT NULL,
   pers_date DATE NOT NULL,
   pers_mail VARCHAR(70) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE Person (
 );
 
 CREATE TABLE Hash (
-  hash_id INTEGER NOT NULL,
+  hash_id INTEGER AUTO_INCREMENT,
   hash_date DATE NOT NULL,
   hash_site_id INTEGER NOT NULL,
   hash_stat_id INTEGER NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE Hash (
 );
 
 CREATE TABLE PersonSite (
-  ps_id INTEGER NOT NULL,
+  ps_id INTEGER AUTO_INCREMENT,
   ps_pers_id INTEGER NOT NULL,
   ps_site_id INTEGER NOT NULL,
 	CONSTRAINT PK_ps PRIMARY KEY (ps_id),
