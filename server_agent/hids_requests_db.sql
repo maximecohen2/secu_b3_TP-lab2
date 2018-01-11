@@ -1,0 +1,7 @@
+CREATE TABLE Request (
+	req_id INTEGER AUTO_INCREMENT,
+	req_order VARCHAR(10) NOT NULL,
+	req_value VARCHAR(255),
+	req_ip VARCHAR(15) NOT NULL,
+	CONSTRAINT PK_req PRIMARY KEY (req_id)
+);
