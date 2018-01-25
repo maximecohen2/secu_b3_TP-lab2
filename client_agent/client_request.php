@@ -17,6 +17,8 @@ if (!empty($_POST)) {
 	$shellCommand['order'] = $_POST['order'];
 }
 
+$shellCommand['STDOUT'] = "2>&1";
+
 if (!empty($shellCommand['scriptName'])) {
 	$command = implode(" ", $shellCommand);
 	$output = explode("\n", shell_exec($command));

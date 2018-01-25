@@ -4,14 +4,15 @@
 import argparse
 import os
 
-from src.order import order_file
+from src.order import order_files, order_hash
 
 DEFAULTDATACONF = ["address", "site-folder", "agent-folder"]
 
 DEFAULTCONFPATH = "./conf"
-#ORDERS = {
-#	FILES :
-#}
+ORDERS = {
+	'FILES' : order_files,
+	'HASH' : order_hash
+}
 
 def parse_args():
 	parser = argparse.ArgumentParser(description="Client Agent",
@@ -52,7 +53,10 @@ def parse_conf(verbose):
 def main():
 	args = parse_args()
 	conf = parse_conf(args.verbose)
-	order_file(conf, args.verbose)
+	if args.order in ORDERS.keys():
+		ORDERS[args.order](conf, args.verbose)
+	else:
+		print("WARNING: order \"{}\" don't exist".format(args.order))
 
 if __name__ == '__main__':
 	main()
